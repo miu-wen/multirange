@@ -1,45 +1,126 @@
 @supports (--css: variables) {
+
+	.multiple-box {
+		padding: 0;
+		text-align: center;
+		transform: scale(1.5);
+		transform-origin: 50% 0;
+		margin: 2em auto .8em auto;
+		width: 100%
+	}
+
+	.multiple_tip {
+		font-size: 12px;
+		line-height: 16px;
+		position: absolute;
+		z-index: 1;
+		top: -28px;
+		width: auto;
+		height: 16px;
+		text-align: center;
+		opacity: .8;
+		color: #333;
+		border: 1px solid #ddd;
+		border-radius: 3px;
+		background-color: #fff;
+		text-shadow: 0 1px 0 #f3f3f3
+	}
+
+	.multiple_sider_bar {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		background: #fe5848;
+		width: 100%;
+		height: 2px
+	}
+
+	.multiple_tip_hide {
+		display: none
+	}
+
 	input[type="range"].multirange {
 		padding: 0;
 		margin: 0;
+		width: 100%;
 		display: inline-block;
 		vertical-align: top;
+		background-color: #ccc;
+		height: 2px;
+		-webkit-appearance: none !important
+	}
+
+	input[type="range"].multirange::-webkit-slider-thumb {
+		width: 20px;
+		height: 20px;
+		background-image: url(img/icon_slider.png);
+		background-size: 20px 20px;
+		margin-top: -8px;
+		background-clip: padding-box;
+		-webkit-appearance: none !important
+	}
+
+	input[type="range"].multirange::-moz-range-thumb {
+		width: 20px;
+		height: 20px;
+		background-size: 20px 20px;
+		margin-top: -8px;
+		background-image: url(img/icon_slider.png);
+		background-clip: padding-box;
+		-webkit-appearance: none !important
 	}
 
 	input[type="range"].multirange.original {
-		position: absolute;
+		left: 0;
+		position: absolute
 	}
 
-		input[type="range"].multirange.original::-webkit-slider-thumb {
-			position: relative;
-			z-index: 2;
-		}
+	input[type="range"].multirange.original::-webkit-slider-thumb {
+		right: 0;
+		position: relative;
+		z-index: 2
+	}
 
-		input[type="range"].multirange.original::-moz-range-thumb {
-			transform: scale(1); /* FF doesn't apply position it seems */
-			z-index: 1;
-		}
+	input[type="range"].multirange.original::-moz-range-thumb {
+		transform: scale(1);
+		z-index: 2
+	}
 
-		input[type="range"].multirange::-moz-range-track {
-			border-color: transparent; /* needed to switch FF to "styleable" control */
-		}
+	input[type="range"].multirange::-webkit-slider-runnable-track {
+		border-color: transparent;
+		height: 5px;
+		margin-top: 2px;
+		border-radius: 10px;
+		-webkit-appearance: none !important
+	}
+
+	input[type="range"].multirange::-moz-range-track {
+		border-color: transparent;
+		margin-top: 2px;
+		height: 5px;
+		border-radius: 10px;
+		-webkit-appearance: none !important
+	}
 
 	input[type="range"].multirange.ghost {
 		position: relative;
+		z-index: 1;
+		height: 2px;
 		background: var(--track-background);
-		--track-background: linear-gradient(to right,
-				transparent var(--low), var(--range-color) 0,
-				var(--range-color) var(--high), transparent 0
-			) no-repeat 0 45% / 100% 40%;
-		--range-color: hsl(190, 80%, 40%);
+		--track-background: linear-gradient(to right, transparent var(--low), var(--range-color) 0, var(--range-color) var(--high), transparent 0) no-repeat 0 .45% 40%;
+		--range-color: #fe5848
 	}
 
-		input[type="range"].multirange.ghost::-webkit-slider-runnable-track {
-			background: var(--track-background);
-		}
+	input[type="range"].multirange.ghost::-webkit-slider-runnable-track {
+		background: var(--track-background)
+	}
 
-		input[type="range"].multirange.ghost::-moz-range-track {
-			background: var(--track-background);
-		}
+	input[type="range"].multirange.ghost::-moz-range-track {
+		background: var(--track-background)
+	}
 
+	input[type="range"].multirange:focus {
+		outline: none
+	}
 }

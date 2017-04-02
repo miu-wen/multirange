@@ -70,15 +70,7 @@ body > header {
 			color: hsl(190, 80%, 50%);
 		}
 
-.demo {
-	width: -moz-max-content;
-	width: max-content;
-	padding: 0;
-	text-align: center;
-	transform: scale(1.5);
-	transform-origin: 50% 0;
-	margin: 2em auto;
-}
+
 
 	.demo input {
 

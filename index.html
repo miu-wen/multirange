@@ -20,11 +20,14 @@
 	<a href="multirange.css" download>Download CSS</a>
 </header>
 
-<section class="demo">
-<input type="range" multiple value="0,100" />
-<input type="range" multiple value="10,80" />
-<input type="range" multiple value="40,60" />
-<input type="range" multiple value="50,50" />
+<section >
+		<input type="range" multiple value="0,100" />
+
+		<input type="range" multiple value="1,10" id="test" step="1"/>
+		<input type="range" multiple value="40,60" />
+
+		<input type="range" multiple value="50,50" />
+
 </section>
 
 <section id="pros-cons">
@@ -73,6 +76,7 @@
 </footer>
 
 <script src="multirange.js"></script>
-
+<script src="polyfill.js"></script>
+<script src="js/zepto.min.js"></script>
 </body>
 </html>
